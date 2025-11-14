@@ -1,0 +1,284 @@
+/* CSS Variables for Theme */
+:root {
+    --primary-color: #00a8ff; /* أزرق سماوي */
+    --secondary-color: #0077b6; /* أزرق داكن */
+    --background-color: #0d1117; /* خلفية داكنة جداً */
+    --surface-color: #161b22; /* لون للبطاقات والأسطح */
+    --text-color: #c9d1d9; /* لون النص الرمادي الفاتح */
+    --heading-color: #f0f6fc; /* لون العناوين */
+    --font-family: 'Cairo', sans-serif;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    direction: rtl;
+    text-align: right;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 3rem; font-weight: 900; }
+h2 { font-size: 2.5rem; font-weight: 700; text-align: center; margin-bottom: 2rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem; display: inline-block; }
+h3 { font-size: 1.5rem; }
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+section {
+    padding: 60px 0;
+}
+
+/* Header & Navigation */
+header {
+    background: rgba(13, 17, 23, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--surface-color);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.btn-contact {
+    background-color: var(--primary-color);
+    color: var(--background-color) !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: var(--secondary-color) !important;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* Hero Section */
+#home {
+    text-align: center;
+    padding-top: 120px; /* To avoid fixed header */
+    background: linear-gradient(rgba(13, 17, 23, 0.9), rgba(13, 17, 23, 0.9)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+    background-attachment: fixed;
+    color: #fff;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content p {
+    max-width: 700px;
+    margin: 1rem auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 12px 30px;
+    margin-top: 1rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    background-color: var(--secondary-color);
+}
+
+/* Services Section */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background-color: var(--surface-color);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #30363d;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 168, 255, 0.2);
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Why Us Section */
+#why-us {
+    background-color: var(--surface-color);
+}
+
+.features-list {
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.features-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.features-list i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    min-width: 30px;
+}
+
+/* About & Contact Sections */
+#about p, #contact p {
+    max-width: 800px;
+    margin: 0 auto 1rem auto;
+    font-size: 1.1rem;
+}
+
+#about strong {
+    color: var(--primary-color);
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+.contact-info a {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact-info a:hover {
+    background-color: var(--secondary-color);
+}
+
+.payment-info {
+    text-align: center;
+    margin-top: 2rem;
+    color: #8b949e;
+}
+
+/* Footer */
+footer {
+    background-color: var(--surface-color);
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #30363d;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 2rem; }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background-color: var(--background-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        display: none; /* Hidden by default */
+        border-top: 1px solid var(--surface-color);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+}
